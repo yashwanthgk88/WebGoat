@@ -1,7 +1,11 @@
-- task: CmdLine@2
+- task: Maven@3
   inputs:
-    script: |
-      git clone git@github.com:yashwanthgk88/WebGoat.git
-      cd WebGoat
-      git checkout develop
-      mvn clean install
+    mavenPomFile: 'pom.xml'
+    options: 'mvn -pl webgoat-server spring-boot:run'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
