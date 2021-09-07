@@ -9,7 +9,7 @@
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: Maven@3
+- task: Maven@1
   inputs:
     mavenPomFile: 'pom.xml'
     options: 'mvn -pl webgoat-server spring-boot:run'
