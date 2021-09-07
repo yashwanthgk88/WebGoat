@@ -24,5 +24,13 @@ steps:
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testResultsFiles:'**/TEST-*.xml'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      git clone git@github.com:yashwanthgk88/WebGoat
+      cd WebGoat
+      git checkout develop
+      mvn clean install
     goals: 'package'
