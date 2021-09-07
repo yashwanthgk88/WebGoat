@@ -1,4 +1,4 @@
-- task: Maven@3
+ task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     options: 'mvn -pl webgoat-server spring-boot:run'
